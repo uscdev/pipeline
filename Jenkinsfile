@@ -11,6 +11,8 @@ pipeline {
                     checkout scm
                     /* .. snip .. */
                     echo 'Building..'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Running ${env}"
             }
         }
         stage('Test') {
