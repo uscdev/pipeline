@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 dockerNode(credentialsId: 'docker-swarm', dockerHost: 'tcp://dcorley-swarm-mgr01.usc.edu:2376', image: 'node:7-alpine', remoteFs: '') {
-    docker version
+    sh "node --version"
 }
 /*node {
     checkout scm
