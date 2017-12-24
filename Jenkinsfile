@@ -8,11 +8,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                node any {
                     checkout scm
                     /* .. snip .. */
                     echo 'Building..'
-                }
             }
         }
         stage('Test') {
