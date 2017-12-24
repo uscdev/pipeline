@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                node {
+                node any {
                     checkout scm
                     /* .. snip .. */
                 }
