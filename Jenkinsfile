@@ -6,8 +6,8 @@ node {
     checkout scm
 
     docker.withServer('tcp://dcorley-swarm-mgr01.usc.edu:2376', 'docker-swarm') {
-        docker.image('mysql:5').withRun('-p 3306:3306') {
-            /* do things */
+        docker.image('node:7-alpine').withRun('-p 3306:3306') {
+            sh 'node --version'
         }
     }
 }/*pipeline {
