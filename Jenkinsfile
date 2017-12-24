@@ -13,7 +13,8 @@ pipeline {
                     echo 'Building..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Running ${env}"
-                sh env
+                sh "env"
+                sh "${env}"
             }
         }
         stage('Test') {
