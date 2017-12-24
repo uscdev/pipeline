@@ -3,14 +3,26 @@
 //   echo Hello World
 //}
 pipeline {
+    agent {
+        docker { image 'node:7-alpine' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
+}
+/*pipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
-                    checkout scm
+                    checkout scm */
                     /* .. snip .. */
-                    echo 'Building..'
+/*                    echo 'Building..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Running ${env}"
                 sh "env"
@@ -29,3 +41,4 @@ pipeline {
         }
     }
 }
+*/
