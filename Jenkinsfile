@@ -1,16 +1,18 @@
 #!/usr/bin/env groovy
-//dockerNode(credentialsId: 'docker-swarm', dockerHost: 'tcp://dcorley-swarm-mgr01.usc.edu:2376', image: 'hello-world', remoteFs: '') {
-//   echo Hello World
-//}
-node {
+dockerNode(credentialsId: 'docker-swarm', dockerHost: 'tcp://dcorley-swarm-mgr01.usc.edu:2376', image: 'node:7-alpine', remoteFs: '') {
+    docker version
+}
+/*node {
     checkout scm
 
     docker.withServer('tcp://dcorley-swarm-mgr01.usc.edu:2376', 'docker-swarm') {
         docker.image('node:7-alpine').withRun('-p 3306:3306') {
-            sh 'node --version'
+            docker version
         }
     }
-}/*pipeline {
+}
+*/
+/*pipeline {
     agent any
 
     stages {
