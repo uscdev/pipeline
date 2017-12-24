@@ -11,8 +11,8 @@ pipeline {
                 node any {
                     checkout scm
                     /* .. snip .. */
+                    echo 'Building..'
                 }
-                echo 'Building..'
             }
         }
         stage('Test') {
