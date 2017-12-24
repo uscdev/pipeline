@@ -7,11 +7,11 @@ pipeline {
 
     stages {
         stage('Build') {
-            node {
-                checkout scm
-                /* .. snip .. */
-            }
             steps {
+                node {
+                    checkout scm
+                    /* .. snip .. */
+                }
                 echo 'Building..'
             }
         }
