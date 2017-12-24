@@ -7,7 +7,7 @@ dockerNode(credentialsId: 'docker-swarm', dockerHost: 'tcp://dcorley-swarm-mgr01
 
     docker.withServer('tcp://dcorley-swarm-mgr01.usc.edu:2376', 'docker-swarm') {
         docker.image('node:7-alpine').withRun('-p 3306:3306') {
-            docker version
+            node --version
         }
     }
 }
