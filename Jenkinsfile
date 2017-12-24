@@ -5,13 +5,12 @@
 node {
     checkout scm
 
-    def customImage = docker.build("my-image:${env.BUILD_ID}")
-
-    customImage.inside {
-        sh 'make test'
+    docker.withServer('tcp://dcorley-swarm-mgr01.usc.edu:2376', 'docker-swarm') {
+        docker.image('mysql:5').withRun('-p 3306:3306') {
+            /* do things */
+        }
     }
-}
-/*pipeline {
+}/*pipeline {
     agent any
 
     stages {
