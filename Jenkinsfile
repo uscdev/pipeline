@@ -6,11 +6,11 @@ pipeline {
     agent any
 
     stages {
-        node {
-            checkout scm
-            /* .. snip .. */
-        }
         stage('Build') {
+            node {
+                checkout scm
+                /* .. snip .. */
+            }
             steps {
                 echo 'Building..'
             }
