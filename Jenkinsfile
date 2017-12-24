@@ -1,4 +1,4 @@
 #!/usr/bin/env groovy
-node {
-  echo "Hello World"
+dockerNode(credentialsId: 'docker-swarm', dockerHost: 'dcorley-swarm-mgr01.docker.usc.edu', image: 'hello-world', remoteFs: '') {
+    // some block
 }
